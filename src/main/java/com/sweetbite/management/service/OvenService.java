@@ -11,43 +11,51 @@ import java.util.UUID;
 @Service
 public class OvenService {
 
-    private final OvenRepository ovenRepository;
+    private final OvenRepository repository;
 
-    public OvenService(OvenRepository ovenRepository) {
-        this.ovenRepository = ovenRepository;
+    public OvenService(OvenRepository repository) {
+        this.repository = repository;
     }
 
-    // create an oven
+    // save an oven
     public Oven save(Oven oven) {
-        return ovenRepository.save(oven);
+        return repository.save(oven);
     }
 
-    // read all part
+    // read all
     public List<Oven> findAll() {
-        return ovenRepository.findAll();
+        return repository.findAll();
     }
 
-    // read one part
+    // read one
     public Optional<Oven> findById(UUID id) {
-        return ovenRepository.findById(id);
+        return repository.findById(id);
     }
 
-    // update part
+    // update
     public Optional<Oven> update(UUID id, Oven details) {
-        return ovenRepository.findById(id).map(oven -> {
-            oven.setOvenNumber(details.getOvenNumber());
-            oven.setName(details.getName());
-            return ovenRepository.save(oven);
-        });
-    }
 
-    // delete part
-    public boolean delete(UUID id) {
-        if (!ovenRepository.existsById(id)) {
-            return false;
+        Optional<Oven> result = repository.findById(id);
+
+        if (result.isEmpty()) {
+            return Optional.empty();
         }
 
-        ovenRepository.deleteById(id);
-        return true;
+        Oven oven = result.get();
+        oven.setOvenNumber(details.getOvenNumber());
+        oven.setName(details.getName());
+
+        return Optional.of(repository.save(oven));
+    }
+
+    // delete
+    public boolean delete(UUID id) {
+
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+            return true;
+        }
+
+        return false;
     }
 }
