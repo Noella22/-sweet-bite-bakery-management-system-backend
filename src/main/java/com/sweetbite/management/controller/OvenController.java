@@ -21,7 +21,7 @@ public class OvenController {
         this.ovenService = ovenService;
     }
 
-    // CREATE
+    // create oven
     @PostMapping("/save")
     public ResponseEntity<String> save(@RequestBody Oven oven) {
         ovenService.save(oven);
@@ -29,13 +29,13 @@ public class OvenController {
                 .body("Oven saved successfully");
     }
 
-    // GET ALL
+    // get all ovens
     @GetMapping("/all")
     public ResponseEntity<List<Oven>> findAll() {
         return ResponseEntity.ok(ovenService.findAll());
     }
 
-    // GET ONE
+    // get one oven by id
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable UUID id) {
 
@@ -49,7 +49,7 @@ public class OvenController {
         return ResponseEntity.ok(oven.get());
     }
 
-    // UPDATE
+    // update part
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(
             @PathVariable UUID id,
@@ -65,7 +65,7 @@ public class OvenController {
         return ResponseEntity.ok(oven.get());
     }
 
-    // DELETE
+    // delete part
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> delete(@PathVariable UUID id) {
 
