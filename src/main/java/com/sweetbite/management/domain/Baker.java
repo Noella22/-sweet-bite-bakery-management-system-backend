@@ -1,5 +1,7 @@
 package com.sweetbite.management.domain;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +9,16 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "baker")
+
+@JsonPropertyOrder({
+    "id",
+    "firstName",
+    "lastName",
+    "phone",
+    "oven",
+    "bakingSkills"
+})
+
 public class Baker {
 
     @Id
