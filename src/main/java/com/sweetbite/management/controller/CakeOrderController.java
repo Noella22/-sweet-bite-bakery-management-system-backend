@@ -5,10 +5,13 @@ import com.sweetbite.management.service.CakeOrderService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
+import org.springframework.format.annotation.DateTimeFormat;
+import com.sweetbite.management.domain.OrderStatus;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/api/cake-orders")
@@ -71,4 +74,20 @@ public class CakeOrderController {
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The cake order with that id does not exist");
     }
+
+    // Find cake orders by status
+    @GetMapping("/by-status")
+    public List<CakeOrder> findByStatus(@RequestParam OrderStatus status) {
+        return service.findByStatus(status);
+}
+
+// Find cake orders between two dates
+    @GetMapping("/between")
+     public List<CakeOrder> findBetweenDates(
+        @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate start,
+        @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate end) {
+
+           return service.findBetweenDates(start, end);
+}
+
 }

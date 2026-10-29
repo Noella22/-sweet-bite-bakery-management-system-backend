@@ -71,4 +71,10 @@ public class CustomerController {
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The customer with that id does not exist");
     }
+
+    // Find customers by last name
+      @GetMapping("/by-last-name")
+      public List<Customer> findByLastName(@RequestParam String lastName) {
+         return service.findByLastName(lastName);
+}
 }

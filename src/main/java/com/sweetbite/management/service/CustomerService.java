@@ -63,4 +63,9 @@ public class CustomerService {
 
         return false;
     }
+
+    // Find customers by last name
+     public List<Customer> findByLastName(String lastName) {
+         return repository.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
+}
 }

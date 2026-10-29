@@ -3,10 +3,12 @@ package com.sweetbite.management.service;
 import com.sweetbite.management.domain.CakeOrder;
 import com.sweetbite.management.repository.CakeOrderRepository;
 import org.springframework.stereotype.Service;
+import com.sweetbite.management.domain.OrderStatus;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.time.LocalDate;
 
 @Service
 public class CakeOrderService {
@@ -60,4 +62,15 @@ public Optional<CakeOrder> update(UUID id, CakeOrder details) {
 
         return false;
     }
+
+    // Find cake orders by status
+      public List<CakeOrder> findByStatus(OrderStatus status) {
+         return repository.findByStatusOrderByOrderDateAsc(status);
+}
+
+    // Find cake orders between two dates
+    public List<CakeOrder> findBetweenDates(LocalDate start, LocalDate end) {
+    return repository.findByOrderDateBetweenOrderByOrderDateAsc(start, end);
+}
+
 }
