@@ -78,4 +78,10 @@ public class OvenController {
 
         return ResponseEntity.ok("Oven deleted successfully");
     }
+
+    // Get all free ovens
+    @GetMapping("/free")
+    public List<Oven> findFreeOvens() {
+     return ovenService.findFreeOvens();
+   }
 }

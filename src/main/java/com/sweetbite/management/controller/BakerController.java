@@ -70,4 +70,10 @@ public class BakerController {
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The baker with that id does not exist");
     }
+
+    // Find bakers by baking skill
+    @GetMapping("/by-baking-skill")
+    public List<Baker> findByBakingSkill(@RequestParam String name) {
+          return service.findByBakingSkill(name);
+     }
 }

@@ -62,4 +62,10 @@ public class BakerService {
 
         return false;
     }
+
+    // Find bakers by baking skill
+    public List<Baker> findByBakingSkill(String name) {
+    return repository.findByBakingSkill(name);
+}
+
 }

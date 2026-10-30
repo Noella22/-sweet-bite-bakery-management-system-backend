@@ -58,4 +58,10 @@ public class OvenService {
 
         return false;
     }
+
+    // Finding ovens that are not assigned to any baker
+    public List<Oven> findFreeOvens() {
+    
+        return repository.findFreeOvens();
+    }
 }

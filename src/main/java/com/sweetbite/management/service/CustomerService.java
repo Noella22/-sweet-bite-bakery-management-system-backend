@@ -67,5 +67,10 @@ public class CustomerService {
     // Find customers by last name
      public List<Customer> findByLastName(String lastName) {
          return repository.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
-}
+     }
+
+     public List<Customer> findCustomersOfBaker(UUID bakerId) {
+         
+        return repository.findCustomersOfBaker(bakerId);
+    }
 }

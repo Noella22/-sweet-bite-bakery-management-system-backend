@@ -63,12 +63,21 @@ public class BakingSkillController {
 
     
     @DeleteMapping("/delete/{id}")
+      
     public ResponseEntity<String> delete(@PathVariable UUID id) {
 
         if (service.delete(id)) {
+            
             return ResponseEntity.ok("Baking skill deleted successfully");
         }
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND) .body("The baking skill with that id does not exist");
     }
+
+   @GetMapping("/unused")
+       
+       public List<BakingSkill> findUnusedSkills() {
+       
+           return service.findUnusedSkills();
+   }
 }

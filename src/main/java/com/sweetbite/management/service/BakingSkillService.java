@@ -57,4 +57,10 @@ public class BakingSkillService {
 
         return false;
     }
+
+    public List<BakingSkill> findUnusedSkills() {
+         
+        return repository.findUnusedSkills();
+    
+   }
 }
