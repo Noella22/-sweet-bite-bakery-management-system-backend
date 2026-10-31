@@ -80,16 +80,28 @@ public class CakeOrderController {
         return ResponseEntity.ok(order.get());
     }
 
-    // Delete a cake order by ID
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> delete(@PathVariable UUID id) {
+    
+  // Delete a cake order only when it has no payments
+@DeleteMapping("/delete/{id}")
+  public ResponseEntity<String> delete(@PathVariable UUID id) {
 
-        if (service.delete(id)) {
-            return ResponseEntity.ok("Cake order deleted successfully");
-        }
-
+    // First, we check whether the cake order exists
+    if (service.findById(id).isEmpty()) {
+        
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("The cake order with that id does not exist");
     }
+
+    
+    if (service.hasPayments(id)) {
+       
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("That cake order has payments, delete them first");
+    }
+
+    // delete the cake order
+    service.delete(id);
+
+    return ResponseEntity.ok("Cake order deleted successfully");
+}
 
     // Find cake orders by status
     @GetMapping("/by-status")
@@ -123,5 +135,7 @@ public class CakeOrderController {
 
          return ResponseEntity.ok(result);
    }
+
+
 
 }

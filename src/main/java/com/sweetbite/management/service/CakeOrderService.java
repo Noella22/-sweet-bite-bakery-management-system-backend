@@ -4,6 +4,7 @@ import com.sweetbite.management.domain.CakeOrder;
 import com.sweetbite.management.repository.CakeOrderRepository;
 import org.springframework.stereotype.Service;
 import com.sweetbite.management.domain.OrderStatus;
+import com.sweetbite.management.repository.PaymentRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,9 +15,11 @@ import java.time.LocalDate;
 public class CakeOrderService {
      
     private final CakeOrderRepository repository;
+    private final PaymentRepository paymentRepository;
 
-    public CakeOrderService(CakeOrderRepository repository) {
-        this.repository = repository;
+    public CakeOrderService(CakeOrderRepository repository, PaymentRepository paymentRepository) {
+         this.repository = repository;
+         this.paymentRepository = paymentRepository;
 }
 
      // Save a cake order
@@ -147,5 +150,11 @@ public class CakeOrderService {
 
             return "Cake order status updated successfully";
      }
+
+     // E3: Checking whether a cake order has payments
+    public boolean hasPayments(UUID cakeOrderId) {
+
+         return paymentRepository.existsByCakeOrder_Id(cakeOrderId);
+    }
 
 }
