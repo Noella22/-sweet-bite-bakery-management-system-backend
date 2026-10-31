@@ -137,5 +137,23 @@ public class CakeOrderController {
    }
 
 
+   
+@GetMapping("/stats/by-status")
+     public List<Object[]> getOrderStatistics() {
+         
+          return service.getOrderStatistics();
+    }
+
+
+    @PatchMapping("/cancel-day")
+      public ResponseEntity<String> cancelOrdersForDay(
+        @RequestParam UUID bakerId,
+        @RequestParam LocalDate date) {
+
+    int count = service.cancelOrdersForDay(bakerId, date);
+
+            
+        return ResponseEntity.ok(count + " cake orders cancelled");
+     }
 
 }

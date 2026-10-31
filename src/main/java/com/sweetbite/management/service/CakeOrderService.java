@@ -151,10 +151,23 @@ public class CakeOrderService {
             return "Cake order status updated successfully";
      }
 
-     // E3: Checking whether a cake order has payments
+     
     public boolean hasPayments(UUID cakeOrderId) {
 
          return paymentRepository.existsByCakeOrder_Id(cakeOrderId);
+    }
+
+    
+    public List<Object[]> getOrderStatistics() {
+         
+        return repository.countOrdersByStatus();
+    }
+
+
+    public int cancelOrdersForDay(UUID bakerId, LocalDate date) {
+
+           
+        return repository.cancelOrdersForDay( bakerId, date, OrderStatus.READY, OrderStatus.CANCELLED);
     }
 
 }
