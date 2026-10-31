@@ -76,4 +76,44 @@ public class BakerController {
     public List<Baker> findByBakingSkill(@RequestParam String name) {
           return service.findByBakingSkill(name);
      }
+
+     @PutMapping("/{bakerId}/baking-skills/{bakingSkillId}")
+     public ResponseEntity<String> addBakingSkill( @PathVariable UUID bakerId, @PathVariable UUID bakingSkillId) {
+
+          String result = service.addBakingSkill(bakerId, bakingSkillId);
+
+    if (result.equals("Baker not found") || result.equals("Baking skill not found")) {
+        
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(result);
+    }
+
+    if (result.equals("Baker already has this baking skill")) {
+       
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(result);
+    }
+
+         return ResponseEntity.ok(result);
+   }
+
+   @PatchMapping("/{bakerId}/oven")
+    
+    public ResponseEntity<String> changeOven(
+        @PathVariable UUID bakerId,
+        @RequestParam int ovenNumber) {
+
+         String result = service.changeOven(bakerId, ovenNumber);
+
+    if (result.equals("Baker not found") || result.equals("Oven not found")) {
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(result);
+    }
+
+    if (result.equals("Oven is already assigned to a baker")) {
+       
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(result);
+    }
+
+       return ResponseEntity.ok(result);
+
+   }
 }

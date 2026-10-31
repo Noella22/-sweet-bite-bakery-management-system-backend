@@ -24,13 +24,29 @@ public class CakeOrderController {
     }
 
     // Save a cake order
-    @PostMapping("/save")
+   @PostMapping("/save")
+    
     public ResponseEntity<String> save(@RequestBody CakeOrder order) {
 
-        service.save(order);
+     String result = service.saveValidatedOrder(order);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body("Cake order saved successfully");
+    if (result.equals("Cake order date cannot be in the past")) {
+        
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
     }
+
+    if (result.equals("Baker is required")) {
+        
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+    }
+
+    if (result.equals("Baker already has a cake order on that date")) {
+        
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(result);
+    }
+
+    return ResponseEntity.status(HttpStatus.CREATED).body(result);
+}
 
     // Get all cake orders
     @GetMapping("/all")
@@ -88,6 +104,24 @@ public class CakeOrderController {
         @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate end) {
 
            return service.findBetweenDates(start, end);
-}
+      }
+
+      @PatchMapping("/{id}/status")
+      public ResponseEntity<String> changeStatus(  @PathVariable UUID id, @RequestParam OrderStatus status) {
+
+             String result = service.changeStatus(id, status);
+
+    if (result.equals("The cake order with that id does not exist")) {
+        
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(result);
+    }
+
+    if (result.startsWith("Cannot change status")) {
+        
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+    }
+
+         return ResponseEntity.ok(result);
+   }
 
 }

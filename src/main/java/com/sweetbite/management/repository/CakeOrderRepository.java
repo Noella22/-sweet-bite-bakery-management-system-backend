@@ -14,4 +14,6 @@ public interface CakeOrderRepository extends JpaRepository<CakeOrder, UUID> {
     List<CakeOrder> findByStatusOrderByOrderDateAsc(OrderStatus status);
     List<CakeOrder> findByOrderDateBetweenOrderByOrderDateAsc(LocalDate start, LocalDate end);
 
+    boolean existsByBakerIdAndOrderDateAndStatusNot( UUID bakerId, LocalDate orderDate, OrderStatus status);
+
 }
