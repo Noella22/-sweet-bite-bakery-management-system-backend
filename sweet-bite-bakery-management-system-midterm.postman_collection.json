@@ -1,0 +1,1586 @@
+{
+  "info": {
+    "_postman_id": "ba6f10ec-65ad-4faf-86b4-19b16f654daa",
+    "name": "SweetBite Bakery Management System - Midterm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58398908"
+  },
+  "item": [
+    {
+      "name": "A2-CRUD operations",
+      "item": [
+        {
+          "name": "Ovens",
+          "item": [
+            {
+              "name": "get all ovens",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"ovenNumber\": 4,\r\n    \"name\": \"Reserve Oven\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/ovens/all",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "ovens",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "create ovens",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/ovens/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "ovens",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update oven",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"ovenNumber\": 1,\r\n    \"name\": \"Main  Oven \"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/ovens/update/f9c833cd-290a-4d78-b695-2d42b259859c",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "ovens",
+                    "update",
+                    "f9c833cd-290a-4d78-b695-2d42b259859c"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete oven",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/ovens/delete/ffc37599-7474-498f-a254-98b95d1440d6",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "ovens",
+                    "delete",
+                    "ffc37599-7474-498f-a254-98b95d1440d6"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "BakingSkill",
+          "item": [
+            {
+              "name": "http://localhost:8080/api/baking-skills/save",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Test Skill\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/baking-skills/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "baking-skills",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "http://localhost:8080/api/baking-skills/all",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/baking-skills/all",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "baking-skills",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "http://localhost:8080/api/baking-skills/befc6458-16d8-466f-8f3e-a2a4f10bf3c8",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/baking-skills/befc6458-16d8-466f-8f3e-a2a4f10bf3c8",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "baking-skills",
+                    "befc6458-16d8-466f-8f3e-a2a4f10bf3c8"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "http://localhost:8080/api/baking-skills/update/befc6458-16d8-466f-8f3e-a2a4f10bf3c8",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \r\n    \"name\": \"Bread\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/baking-skills/update/befc6458-16d8-466f-8f3e-a2a4f10bf3c8",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "baking-skills",
+                    "update",
+                    "befc6458-16d8-466f-8f3e-a2a4f10bf3c8"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "http://localhost:8080/api/baking-skills/delete/1c876886-882c-4bc5-8484-8c4dd9b0d1ec",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Test Skill\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/baking-skills/delete/1c876886-882c-4bc5-8484-8c4dd9b0d1ec",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "baking-skills",
+                    "delete",
+                    "1c876886-882c-4bc5-8484-8c4dd9b0d1ec"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Baker",
+          "item": [
+            {
+              "name": "New Request",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"firstName\": \"Uwera\",\r\n    \"lastName\": \"Aline\",\r\n    \"phone\": \"0781234567\",\r\n    \"oven\": {\r\n        \"id\": \"f9c833cd-290a-4d78-b695-2d42b259859c\"\r\n    },\r\n    \"bakingSkills\": [\r\n        {\r\n            \"id\": \"a2b45849-4198-460f-827f-51af6b5a5219\"\r\n        },\r\n        {\r\n            \"id\": \"46be1d8d-709c-47e9-a9c4-b2b788cf2225\"\r\n        }\r\n    ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/bakers/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "bakers",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/bakers/all",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "bakers",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"firstName\": \"Claude\",\r\n    \"lastName\": \"Mugisha\",\r\n    \"phone\": \"0783456789\",\r\n    \"oven\": {\r\n        \"id\": \"c2f6b188-eb82-4606-8fa4-319d5da9269b\",\r\n        \"name\": \"Cake Baking Oven\",\r\n        \"ovenNumber\": 3\r\n    },\r\n    \"bakingSkills\": [\r\n        {\r\n            \"id\": \"befc6458-16d8-466f-8f3e-a2a4f10bf3c8\",\r\n            \"name\": \"Bread Baking\"\r\n        }\r\n    ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/bakers/update/66a36201-b740-41f6-9da6-e7cecced5f6b",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "bakers",
+                    "update",
+                    "66a36201-b740-41f6-9da6-e7cecced5f6b"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "GET",
+                "header": []
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/bakers/delete/7fe90061-3c55-4a54-b51e-7f15c3761521",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "bakers",
+                    "delete",
+                    "7fe90061-3c55-4a54-b51e-7f15c3761521"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Customer",
+          "item": [
+            {
+              "name": "New Request",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"firstName\": \"Patrick\",\r\n    \"lastName\": \"Niyonzima\",\r\n    \"customerCode\": \"CUST005\",\r\n    \"phone\": \"0785678901\",\r\n    \"email\": \"patrick@example.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/customers/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "customers",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/customers/all",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "customers",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"firstName\": \"Grace\",\r\n    \"lastName\": \"Uwase\",\r\n    \"customerCode\": \"CUST004\",\r\n    \"phone\": \"0789998877\",\r\n    \"email\": \"grace.uwase@example.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/customers/update/4719bff2-0e09-4892-a104-cda6d26ab008",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "customers",
+                    "update",
+                    "4719bff2-0e09-4892-a104-cda6d26ab008"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/customers/delete/b31aa49d-f647-43cb-8707-e062a3fb6c12",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "customers",
+                    "delete",
+                    "b31aa49d-f647-43cb-8707-e062a3fb6c12"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "CakeOrder",
+          "item": [
+            {
+              "name": "New Request",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/cake-orders/all",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "cake-orders",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"orderDate\": \"2026-11-22\",\r\n  \"status\": \"PLACED\",\r\n  \"description\": \"Whole wheat bread\",\r\n  \"quantity\": 5,\r\n  \"customer\": {\r\n    \"id\": \"c9c731d1-26a2-4faa-8502-890a829c356e\"\r\n  },\r\n  \"baker\": {\r\n    \"id\": \"66a36201-b740-41f6-9da6-e7cecced5f6b\"\r\n  }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/cake-orders/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "cake-orders",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/cake-orders/79c58bb1-1100-4c4a-935f-38ee10e2abcd",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "cake-orders",
+                    "79c58bb1-1100-4c4a-935f-38ee10e2abcd"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"baker\": {\r\n        \"id\": \"cfa4e4c0-ffa3-4651-84c8-f7443f3b89f1\",\r\n        \"firstName\": \"Uwera\",\r\n        \"lastName\": \"Aline\",\r\n        \"phone\": \"0781234567\",\r\n        \"oven\": {\r\n            \"id\": \"f9c833cd-290a-4d78-b695-2d42b259859c\",\r\n            \"name\": \"Main  Oven \",\r\n            \"ovenNumber\": 1\r\n        },\r\n        \"bakingSkills\": [\r\n            {\r\n                \"id\": \"a2b45849-4198-460f-827f-51af6b5a5219\",\r\n                \"name\": \"Cakes\"\r\n            },\r\n            {\r\n                \"id\": \"46be1d8d-709c-47e9-a9c4-b2b788cf2225\",\r\n                \"name\": \"Pastries\"\r\n            }\r\n        ]\r\n    },\r\n    \"customer\": {\r\n        \"customerCode\": \"CUST001\",\r\n        \"email\": \"alice@example.com\",\r\n        \"firstName\": \"Alice\",\r\n        \"id\": \"8c6343b6-560d-41e7-99d1-ef510c75de24\",\r\n        \"lastName\": \"Mukamana\",\r\n        \"phone\": \"0781234567\"\r\n    },\r\n   \"description\": \"Chocolate birthday cake with decorations\",\r\n    \"id\": \"79c58bb1-1100-4c4a-935f-38ee10e2abcd\",\r\n    \"orderDate\": \"2026-10-20\",\r\n    \"quantity\": 3,\r\n    \"status\": \"CANCELLED\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/cake-orders/update/79c58bb1-1100-4c4a-935f-38ee10e2abcd",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "cake-orders",
+                    "update",
+                    "79c58bb1-1100-4c4a-935f-38ee10e2abcd"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "New Request",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/cake-orders/delete/71dbc06f-b15c-4237-af13-674f03bb0045",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "cake-orders",
+                    "delete",
+                    "71dbc06f-b15c-4237-af13-674f03bb0045"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "D2",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/cake-orders/7a4259e3-302e-4236-ae9d-08d5358eb168/status?status=PLACED",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "cake-orders",
+                "7a4259e3-302e-4236-ae9d-08d5358eb168",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "PLACED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/cake-orders/7a4259e3-302e-4236-ae9d-08d5358eb168/status?status=READY",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "cake-orders",
+                "7a4259e3-302e-4236-ae9d-08d5358eb168",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "READY"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "D3",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/bakers/66a36201-b740-41f6-9da6-e7cecced5f6b/baking-skills/a7ef1370-dfff-4d8c-b3a0-1563eda71fe8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "bakers",
+                "66a36201-b740-41f6-9da6-e7cecced5f6b",
+                "baking-skills",
+                "a7ef1370-dfff-4d8c-b3a0-1563eda71fe8"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/bakers/66a36201-b740-41f6-9da6-e7cecced5f6b/baking-skills/a7ef1370-dfff-4d8c-b3a0-1563eda71fe8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "bakers",
+                "66a36201-b740-41f6-9da6-e7cecced5f6b",
+                "baking-skills",
+                "a7ef1370-dfff-4d8c-b3a0-1563eda71fe8"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/bakers/00000000-0000-0000-0000-000000000000/baking-skills/a7ef1370-dfff-4d8c-b3a0-1563eda71fe8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "bakers",
+                "00000000-0000-0000-0000-000000000000",
+                "baking-skills",
+                "a7ef1370-dfff-4d8c-b3a0-1563eda71fe8"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "D4",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/bakers/66a36201-b740-41f6-9da6-e7cecced5f6b/oven?ovenNumber=4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "bakers",
+                "66a36201-b740-41f6-9da6-e7cecced5f6b",
+                "oven"
+              ],
+              "query": [
+                {
+                  "key": "ovenNumber",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/bakers/66a36201-b740-41f6-9da6-e7cecced5f6b/oven?ovenNumber=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "bakers",
+                "66a36201-b740-41f6-9da6-e7cecced5f6b",
+                "oven"
+              ],
+              "query": [
+                {
+                  "key": "ovenNumber",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "oven that doesn't exist",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/bakers/66a36201-b740-41f6-9da6-e7cecced5f6b/oven?ovenNumber=99",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "bakers",
+                "66a36201-b740-41f6-9da6-e7cecced5f6b",
+                "oven"
+              ],
+              "query": [
+                {
+                  "key": "ovenNumber",
+                  "value": "99"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/bakers/66a36201-b740-41f6-9da6-e7cecced5f6b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "bakers",
+                "66a36201-b740-41f6-9da6-e7cecced5f6b"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "E1",
+      "item": [
+        {
+          "name": "for placed cakes",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"paymentMethod\": \"CASH\",\r\n  \"reference\": \"PAY001\",\r\n  \"amount\": 25000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/payments/save?cakeOrderId=fd69b83d-8eaa-47aa-ba32-6807770fb054",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "payments",
+                "save"
+              ],
+              "query": [
+                {
+                  "key": "cakeOrderId",
+                  "value": "fd69b83d-8eaa-47aa-ba32-6807770fb054"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "for ready cakes",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"paymentMethod\": \"CASH\",\r\n  \"reference\": \"PAY001\",\r\n  \"amount\": 25000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/payments/save?cakeOrderId=0cbb3710-22de-43a0-a2dc-ffc27265c38e",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "payments",
+                "save"
+              ],
+              "query": [
+                {
+                  "key": "cakeOrderId",
+                  "value": "0cbb3710-22de-43a0-a2dc-ffc27265c38e"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "E2",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/payments/customer/CUST002",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "payments",
+                "customer",
+                "CUST002"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "E3",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/cake-orders/delete/0cbb3710-22de-43a0-a2dc-ffc27265c38e",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "cake-orders",
+                "delete",
+                "0cbb3710-22de-43a0-a2dc-ffc27265c38e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/payments/delete/4fd6b425-9104-4fed-9fc8-68967238bfe4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "payments",
+                "delete",
+                "4fd6b425-9104-4fed-9fc8-68967238bfe4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/payments/delete/4fd6b425-9104-4fed-9fc8-68967238bfe4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "payments",
+                "delete",
+                "4fd6b425-9104-4fed-9fc8-68967238bfe4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/payments/customer/CUST002",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "payments",
+                "customer",
+                "CUST002"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "F1",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/cake-orders/stats/by-status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "cake-orders",
+                "stats",
+                "by-status"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "F2",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/cake-orders/cancel-day?bakerId=66a36201-b740-41f6-9da6-e7cecced5f6b&date=2026-11-22",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "cake-orders",
+                "cancel-day"
+              ],
+              "query": [
+                {
+                  "key": "bakerId",
+                  "value": "66a36201-b740-41f6-9da6-e7cecced5f6b"
+                },
+                {
+                  "key": "date",
+                  "value": "2026-11-22"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/cake-orders/all",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "cake-orders",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/cake-orders/cancel-day?bakerId=cfa4e4c0-ffa3-4651-84c8-f7443f3b89f1&date=2026-10-25",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "cake-orders",
+                "cancel-day"
+              ],
+              "query": [
+                {
+                  "key": "bakerId",
+                  "value": "cfa4e4c0-ffa3-4651-84c8-f7443f3b89f1"
+                },
+                {
+                  "key": "date",
+                  "value": "2026-10-25"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Bonus",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/dashboard/summary",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "dashboard",
+                "summary"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/cake-orders/page?page=1&size=5&sort=orderDate,desc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "cake-orders",
+                "page"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "5"
+                },
+                {
+                  "key": "sort",
+                  "value": "orderDate,desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "B1 find customer by last name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/customers/by-last-name?lastName=MUKAMANA",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "customers",
+            "by-last-name"
+          ],
+          "query": [
+            {
+              "key": "lastName",
+              "value": "MUKAMANA"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B2 Find CakeOrder by Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/cake-orders/by-status?status=IN_PREPARATION",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "cake-orders",
+            "by-status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "IN_PREPARATION"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B3 CakeOrders by date range",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/cake-orders/between?start=2026-10-01&end=2026-10-31",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "cake-orders",
+            "between"
+          ],
+          "query": [
+            {
+              "key": "start",
+              "value": "2026-10-01"
+            },
+            {
+              "key": "end",
+              "value": "2026-10-31"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C1 Bakers by Baking Skill",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/bakers/by-baking-skill?name=pizza",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bakers",
+            "by-baking-skill"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "pizza"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/ovens/free",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "ovens",
+            "free"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C3 unused baking skill",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/baking-skills/unused",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "baking-skills",
+            "unused"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C4 get customers of a baker",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/customers/of-baker/cfa4e4c0-ffa3-4651-84c8-f7443f3b89f1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "customers",
+            "of-baker",
+            "cfa4e4c0-ffa3-4651-84c8-f7443f3b89f1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C4 baker that do not exist",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/customers/of-baker/00000000-0000-0000-0000-000000000000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "customers",
+            "of-baker",
+            "00000000-0000-0000-0000-000000000000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D1 baker was booked",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"orderDate\": \"2026-11-08\",\r\n    \"description\": \" big birthday cake\",\r\n    \"quantity\": 1,\r\n    \"status\": \"PLACED\",\r\n    \"customer\": {\r\n        \"id\": \"8c6343b6-560d-41e7-99d1-ef510c75de24\"\r\n    },\r\n    \"baker\": {\r\n        \"id\": \"cfa4e4c0-ffa3-4651-84c8-f7443f3b89f1\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/cake-orders/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "cake-orders",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D1 date is in past",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"orderDate\": \"2026-10-01\",\r\n    \"description\": \"Banana cake\",\r\n    \"quantity\": 1,\r\n    \"status\": \"READY\",\r\n    \"customer\": {\r\n        \"id\": \"8c6343b6-560d-41e7-99d1-ef510c75de24\"\r\n    },\r\n    \"baker\": {\r\n        \"id\": \"cfa4e4c0-ffa3-4651-84c8-f7443f3b89f1\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/cake-orders/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "cake-orders",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D1 successful order now",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"orderDate\": \"2026-12-10\",\r\n    \"description\": \"Graduation cake\",\r\n    \"quantity\": 2,\r\n    \"status\": \"READY\",\r\n    \"customer\": {\r\n        \"id\": \"8c6343b6-560d-41e7-99d1-ef510c75de24\"\r\n    },\r\n    \"baker\": {\r\n        \"id\": \"cfa4e4c0-ffa3-4651-84c8-f7443f3b89f1\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/cake-orders/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "cake-orders",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Getting all cake_orders",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/cake-orders/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "cake-orders",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
