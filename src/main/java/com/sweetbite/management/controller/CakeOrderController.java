@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import com.sweetbite.management.domain.OrderStatus;
 
 import java.util.List;
@@ -155,5 +159,26 @@ public class CakeOrderController {
             
         return ResponseEntity.ok(count + " cake orders cancelled");
      }
+
+     @GetMapping("/page")
+     public Page<CakeOrder> getOrdersPage(
+        @RequestParam(defaultValue = "0") int page,
+        @RequestParam(defaultValue = "5") int size,
+        @RequestParam(defaultValue = "orderDate,desc") String sort) {
+
+    String[] sortParts = sort.split(",");
+
+    String field = sortParts[0];
+    Sort.Direction direction = Sort.Direction.ASC;
+
+    if (sortParts.length > 1 && sortParts[1].equalsIgnoreCase("desc")) {
+        direction = Sort.Direction.DESC;
+    }
+
+    Pageable pageable = PageRequest.of(page, size, Sort.by(direction, field));
+
+            
+              return service.getOrdersPage(pageable);
+      }
 
 }

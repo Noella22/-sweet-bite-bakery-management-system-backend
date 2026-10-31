@@ -5,6 +5,8 @@ import com.sweetbite.management.repository.CakeOrderRepository;
 import org.springframework.stereotype.Service;
 import com.sweetbite.management.domain.OrderStatus;
 import com.sweetbite.management.repository.PaymentRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
@@ -169,5 +171,10 @@ public class CakeOrderService {
            
         return repository.cancelOrdersForDay( bakerId, date, OrderStatus.READY, OrderStatus.CANCELLED);
     }
+
+    public Page<CakeOrder> getOrdersPage(Pageable pageable) {
+          
+        return repository.findAll(pageable);
+     }
 
 }

@@ -38,4 +38,8 @@ public interface CakeOrderRepository extends JpaRepository<CakeOrder, UUID> {
         @Param("ready") OrderStatus ready,
         @Param("cancelled") OrderStatus cancelled);
 
+        long countByOrderDate(LocalDate orderDate);
+
+        long countByStatus(OrderStatus status);
+
 }
